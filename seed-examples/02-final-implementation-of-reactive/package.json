@@ -1,0 +1,29 @@
+{
+  "name": "codicamp-typescript-basics",
+  "version": "1.0.0",
+  "description": "Typescript exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodiCamp/TypeScript-Basics.git"
+  },
+  "author": "CodiCamp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodiCamp/TypeScript-Basics/issues"
+  },
+  "homepage": "https://github.com/CodiCamp/TypeScript-Basics#readme",
+  "dependencies": {
+    "awesome-typescript-loader": "^5.0.0",
+    "typescript": "^2.8.3",
+    "webpack": "^4.10.2",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "devDependencies": {
+    "webpack-cli": "^2.1.4"
+  }
+}
