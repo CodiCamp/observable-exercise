@@ -2,6 +2,13 @@
 
 Introduction to the core concepts of reactive programming
 
+## Materials used
+
+http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html
+https://www.learnrxjs.io/operators/creation/create.html
+https://toddmotto.com/rxjs-observables-observers-operators
+https://gist.github.com/staltz/868e7e9bc2a7b8c1f754
+
 ## Reactive programming
 
 > Reactive programming is programming with **asynchronous data streams**.
