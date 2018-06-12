@@ -1,4 +1,3 @@
-import { Observer } from 'rxjs';
 import { Observable } from 'rxjs';
 import { publish, takeWhile } from 'rxjs/operators';
 import { ConnectableObservable } from 'rxjs';

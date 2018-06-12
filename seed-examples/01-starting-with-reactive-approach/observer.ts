@@ -4,7 +4,7 @@ export class Observer {
   constructor(private _observable: Observable) {}
 
   /**
-   * Update Observable wuth new value
+   * Update Observable with new value
    * @param {Any} newValue
    * @returns {Void}
    */
