@@ -7,6 +7,7 @@ import * as io from 'socket.io-client';
   /* create a new observable, providing the subscribe function. */
   let socket: SocketIOClient.Socket;
   const url = 'localhost:3000';
+  
   const messages = Observable.create((observer: Observer<any>) => {
     console.log(
       '%cNew subscription created',

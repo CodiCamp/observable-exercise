@@ -6,7 +6,8 @@
     "strict": true,
     "noImplicitAny": true,
     "module": "commonjs",
-    "lib": ["es2015", "es2015.iterable", "dom"]
+    "lib": ["es2015", "es2015.iterable", "dom"],
+    "skipLibCheck": true
   },
   "include": ["./**/*.ts"]
 }

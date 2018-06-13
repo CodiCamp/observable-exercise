@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server"
+    "start:client": "webpack-dev-server",
+    "start:server": "ts-node ./server/server.ts"
   },
   "repository": {
     "type": "git",
@@ -18,16 +19,18 @@
   },
   "homepage": "https://github.com/CodiCamp/TypeScript-Basics#readme",
   "dependencies": {
-    "@types/socket.io": "^1.4.34",
-    "@types/socket.io-client": "^1.4.32",
     "awesome-typescript-loader": "^5.0.0",
     "rxjs": "^6.2.0",
     "socket.io": "^2.1.1",
+    "ts-node": "^6.1.1",
     "typescript": "^2.8.3",
     "webpack": "^4.10.2",
     "webpack-dev-server": "^3.1.4"
   },
   "devDependencies": {
+    "@types/node": "^10.3.2",
+    "@types/socket.io": "^1.4.34",
+    "@types/socket.io-client": "^1.4.32",
     "webpack-cli": "^2.1.4"
   }
 }
