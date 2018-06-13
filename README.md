@@ -4,12 +4,12 @@ Introduction to the core concepts of reactive programming
 
 ## Materials used
 
-http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html
-https://www.learnrxjs.io/operators/creation/create.html
-https://toddmotto.com/rxjs-observables-observers-operators
-https://gist.github.com/staltz/868e7e9bc2a7b8c1f754
-https://auth0.com/blog/whats-new-in-rxjs-6/
-https://www.academind.com/learn/javascript/rxjs-6-what-changed/
+* http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html
+* https://www.learnrxjs.io/operators/creation/create.html
+* https://toddmotto.com/rxjs-observables-observers-operators
+* https://gist.github.com/staltz/868e7e9bc2a7b8c1f754
+* https://auth0.com/blog/whats-new-in-rxjs-6/
+* https://www.academind.com/learn/javascript/rxjs-6-what-changed/
 
 ## Reactive programming
 
