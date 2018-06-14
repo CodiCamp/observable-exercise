@@ -7,7 +7,7 @@
     "noImplicitAny": true,
     "module": "commonjs",
     "lib": ["es2015", "es2015.iterable", "dom"],
-    "skipLibCheck": true
+    "skipLibCheck": true //https://github.com/angular/angular/issues/24245
   },
   "include": ["./**/*.ts"]
 }

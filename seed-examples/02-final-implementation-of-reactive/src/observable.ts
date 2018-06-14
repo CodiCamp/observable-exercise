@@ -1,14 +1,19 @@
+import { Observer } from './observer';
+import { Subscriber } from './subscriber';
+import { Subscription } from './subscription';
 export class Observable {
   // Subscriber
   // last stream value
   // the result of the subscribe method
-  // FN that is passed to the create method
   // The object that notifies for changes in the stream of data
+  private _observer: Observer;
+  private _subscription: Subscription;
+  private _subscriber: Subscriber | null;
 
   /**
    * Nothing to do here
    */
-  constructor() {}
+  constructor(private _invokerFn: (observer: Observer) => void) {}
 
   /**
    * Execute multiple notification values and complete the stream
@@ -22,7 +27,11 @@ export class Observable {
    * @param {Function} observerFunction
    * @returns {Observable}
    */
-  static create(observerFunction: (observer: any) => void) {}
+  static create(observerFunction: (observer: Observer) => void) {
+    const observable = new Observable(observerFunction);
+
+    return observable;
+  }
 
   /**
    * Get last stream value
@@ -52,7 +61,9 @@ export class Observable {
    * @param {Observer} observer
    * @returns {Void}
    */
-  setObserver() {}
+  setObserver(observerFunction: (observer: Observer) => void) {
+    this._invokerFn = observerFunction;
+  }
 
   /**
    * Get current subscription
@@ -72,7 +83,7 @@ export class Observable {
    * @param {Any} newValue
    * @returns {Void}
    */
-  update() {}
+  update(newValue: any) {}
 
   /**
    * @param {Object} subscriberCallbacks
@@ -81,5 +92,15 @@ export class Observable {
    * @prop onComplete
    * @return {Subscription}
    */
-  subscribe() {}
+  subscribe(subscriber: Subscriber) {
+    this._subscriber = subscriber;
+    this._observer = new Observer(this);
+    this._invokerFn(this._observer);
+
+    this._subscription = new Subscription(() => {
+      this._subscriber = null;
+    });
+
+    return this._subscription;
+  }
 }

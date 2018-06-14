@@ -8,7 +8,9 @@ export class Observer {
    * @param {Any} newValue
    * @returns {Void}
    */
-  next(newValue: any) {}
+  next(newValue: any) {
+    this._observable.update(newValue);
+  }
 
   /**
    * Execute onComplte method of the subscriber with last value

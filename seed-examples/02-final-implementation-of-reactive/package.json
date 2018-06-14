@@ -19,7 +19,7 @@
   "homepage": "https://github.com/CodiCamp/TypeScript-Basics#readme",
   "dependencies": {
     "awesome-typescript-loader": "^5.0.0",
-    "typescript": "^2.8.3",
+    "typescript": "^2.9.1",
     "webpack": "^4.10.2",
     "webpack-dev-server": "^3.1.4"
   },
