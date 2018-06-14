@@ -3,6 +3,7 @@ import { Observable } from './src/observable';
 console.log(Observable);
 
 //roughly replicated the behavior over here: https://github.com/ReactiveX/rxjs/blob/master/doc/observable.md
+/* create a new observable, providing the subscribe function. */
 // const myObservable = Observable.create((observer) => {
 //   // Observer only rises events
 //   observer.next('asdf');

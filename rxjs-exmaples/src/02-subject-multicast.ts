@@ -22,10 +22,10 @@ import { Subject } from 'rxjs';
 
   s.subscribe(
     function(next) {
-      console.log('before 2:', next);
+      console.log('before 3:', next);
     },
     (error) => console.warn(error),
-    () => console.log('complete before 2'),
+    () => console.log('complete before 3'),
   );
 
   /* Emit some values. */

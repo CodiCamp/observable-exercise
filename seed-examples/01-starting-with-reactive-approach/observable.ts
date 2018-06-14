@@ -6,7 +6,7 @@ export class Observable {
   // The object that notifies for changes in the stream of data
 
   /**
-   * Nothing to do here
+   * Nothing to do here for now
    */
   constructor() {}
 
@@ -14,6 +14,7 @@ export class Observable {
    * Execute multiple notification values and complete the stream
    * Must return new Observable
    * @param values
+   * @returns {Observable}
    */
   static of(...values) {}
 
