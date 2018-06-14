@@ -2,7 +2,9 @@ export class Subscription {
   /**
    * @param {Function} unsubscribeFuntion
    */
-  constructor(private unsubscribeFuntion: () => void) {}
+  constructor(private _unsubscribeFuntion: () => void) {}
 
-  unsubscribe() {}
+  unsubscribe() {
+    this._unsubscribeFuntion();
+  }
 }

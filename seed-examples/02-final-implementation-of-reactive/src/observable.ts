@@ -9,6 +9,7 @@ export class Observable {
   private _observer: Observer;
   private _subscription: Subscription;
   private _subscriber: Subscriber | null;
+  private _value: any;
 
   /**
    * Nothing to do here
@@ -36,12 +37,16 @@ export class Observable {
   /**
    * Get last stream value
    */
-  getValue() {}
+  getValue(): any {
+    return this._value;
+  }
 
   /**
    * Get current subscriber
    */
-  getSubscriber() {}
+  getSubscriber(): Subscriber | null {
+    return this._subscriber;
+  }
 
   /**
    * Set new subscriber
@@ -69,7 +74,9 @@ export class Observable {
    * Get current subscription
    * @returns {Subscription}
    */
-  getSubscription() {}
+  getSubscription(): Subscription {
+    return this._subscription;
+  }
 
   /**
    * Set invoker function
@@ -83,7 +90,9 @@ export class Observable {
    * @param {Any} newValue
    * @returns {Void}
    */
-  update(newValue: any) {}
+  update(newValue: any) {
+    this._value = newValue;
+  }
 
   /**
    * @param {Object} subscriberCallbacks
@@ -92,7 +101,7 @@ export class Observable {
    * @prop onComplete
    * @return {Subscription}
    */
-  subscribe(subscriber: Subscriber) {
+  subscribe(subscriber: Subscriber): Subscription {
     this._subscriber = subscriber;
     this._observer = new Observer(this);
     this._invokerFn(this._observer);

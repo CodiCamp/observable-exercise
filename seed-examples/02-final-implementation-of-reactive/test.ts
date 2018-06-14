@@ -29,6 +29,8 @@ const subscription = myObservable.subscribe({
   },
 });
 
+subscription.unsubscribe();
+
 // //also replicated the .of() method
 // Observable.of(1, 2, 3).subscribe((value) => {
 //   console.log(value);
