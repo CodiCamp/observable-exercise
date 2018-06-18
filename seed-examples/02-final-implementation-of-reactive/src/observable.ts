@@ -104,11 +104,11 @@ export class Observable {
   subscribe(subscriber: Subscriber): Subscription {
     this._subscriber = subscriber;
     this._observer = new Observer(this);
-    this._invokerFn(this._observer);
-
     this._subscription = new Subscription(() => {
       this._subscriber = null;
     });
+
+    this._invokerFn(this._observer);
 
     return this._subscription;
   }
