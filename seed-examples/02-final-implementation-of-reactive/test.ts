@@ -12,7 +12,7 @@ const myObservable = Observable.create((observer) => {
   observer.complete('still subscribed?');
   observer.throw('Oh no! An error!');
 
-  observer.next('still subscribed?');
+  observer.next('You should not see this?');
 });
 
 const subscription = myObservable.subscribe({
@@ -24,12 +24,11 @@ const subscription = myObservable.subscribe({
   },
   onComplete(lastValue) {
     console.log('the observable was completed');
-    console.log('last value before completion:');
-    console.log(lastValue);
+    console.log('last value before completion:', lastValue);
   },
 });
 
-subscription.unsubscribe();
+// subscription.unsubscribe();
 
 // //also replicated the .of() method
 // Observable.of(1, 2, 3).subscribe((value) => {

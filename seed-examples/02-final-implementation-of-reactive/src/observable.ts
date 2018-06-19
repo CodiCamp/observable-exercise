@@ -104,6 +104,7 @@ export class Observable {
   subscribe(subscriber: Subscriber): Subscription {
     this._subscriber = subscriber;
     this._observer = new Observer(this);
+
     this._subscription = new Subscription(() => {
       this._subscriber = null;
     });
