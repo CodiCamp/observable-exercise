@@ -32,20 +32,22 @@ import { Observable, Subscriber } from 'rxjs';
     },
   ];
 
-  const handleNextValue = function(
+  const valueEmitter = function(
     this: Subscriber<ValueType>,
     value: ValueType,
   ): void {
+    this.next(value);
+
+    let nextIndex = dataStreamValues.indexOf(value) + 1;
+
+    if (nextIndex === dataStreamValues.length) {
+      nextIndex = 0;
+    }
+
+    const nextValue = dataStreamValues[nextIndex];
+
     setTimeout(() => {
-      let nextIndexValue: number = dataStreamValues.indexOf(value) + 1;
-      if (nextIndexValue == dataStreamValues.length) {
-        nextIndexValue = 0;
-      }
-
-      const next: ValueType = dataStreamValues[nextIndexValue];
-      this.next(next);
-
-      handleNextValue.call(this, next);
+      valueEmitter.call(this, nextValue);
     }, value.delay);
   };
 
@@ -53,11 +55,9 @@ import { Observable, Subscriber } from 'rxjs';
     (observer: Subscriber<ValueType>) => {
       console.log('Started streaming');
 
-      const [first] = dataStreamValues;
+      const [firstValue] = dataStreamValues;
 
-      observer.next(first);
-
-      handleNextValue.call(observer, first);
+      valueEmitter.call(observer, firstValue);
     },
   );
 
